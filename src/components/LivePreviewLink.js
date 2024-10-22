@@ -2,7 +2,7 @@ import React from "react";
 
 function LivePreviewLink({data}) {
 
-    const base_url = 'http://parchar.in/';
+    const base_url = 'http://localhost:5001/';
 
     return(
         <div class='container mt-5'>

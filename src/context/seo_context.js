@@ -51,6 +51,10 @@ export const SeoProvider = ({children}) => {
         }
     }
 
+    useEffect(() => {
+        fetchSeoList()
+    }, []);
+
     return(
         <SeoContext.Provider
             value={{

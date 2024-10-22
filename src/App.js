@@ -16,12 +16,10 @@ function App() {
 
  
   return (
-    <>
-    <h1>Add Seo</h1>
-    <AddSeoMetaData 
-    />
-    <SeoTable />
-    </>
+    <div className="row">
+      <AddSeoMetaData />
+      <SeoTable />
+    </div>
   );
 }
 
