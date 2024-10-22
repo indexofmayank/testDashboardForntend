@@ -46,9 +46,9 @@ function AddSeoMetaData() {
                     setSelectedPage(e.target.value);
                 }}>
                     <option value="">Select page</option>
-                    <option value="home/offers">Offer screen</option>
-                    <option value="home/details">Detail screen</option>
-                    <option value="home/aboutus">About screen</option>
+                    <option value="home">Home screen</option>
+                    <option value="about">About screen</option>
+                    <option value="contact">Contact screen</option>
                 </select>
                 <div className='mb-3'>
                     <label className="form-label">Meta Data</label>
