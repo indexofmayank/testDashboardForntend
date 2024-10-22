@@ -14,7 +14,7 @@ const SeoContext = React.createContext();
 const initialState = {
     seoList_loading: false,
     seoList_error: true,
-    seoList: [],    
+    seoList: [],
 }
 
 export const SeoProvider = ({children}) => {
@@ -31,11 +31,32 @@ export const SeoProvider = ({children}) => {
         }
     }
 
+    const saveSeo = async (select_page, meta_title, meta_description, meta_keywords) => {
+        console.log(select_page);
+        console.log(meta_title);
+        console.log(meta_description);
+        console.log(meta_keywords);
+        try {
+            const response = await axios.post(createSeo_url, {
+                select_page,
+                meta_title,
+                meta_description,
+                meta_keywords
+            });
+            const {success, data} = response;
+            return {success, data};
+        } catch (error) {
+            const {message} = error.message;
+            return {success: false, message};
+        }
+    }
+
     return(
         <SeoContext.Provider
             value={{
                 ...state,
-                fetchSeoList
+                fetchSeoList,
+                saveSeo
             }}
         >
             {children}
